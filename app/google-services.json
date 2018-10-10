@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "674378221259",
+    "firebase_url": "https://aleentaskmngr2018.firebaseio.com",
+    "project_id": "aleentaskmngr2018",
+    "storage_bucket": "aleentaskmngr2018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674378221259:android:c2e1ee87b7d6da75",
+        "android_client_info": {
+          "package_name": "com.nassra.aleen.aleentaskmngr2018"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "674378221259-d1aevmnqa4edcl6emvl4olg303rf7e9q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nassra.aleen.aleentaskmngr2018",
+            "certificate_hash": "013f43c9a5d380c46de43c04644418dbe5d2a253"
+          }
+        },
+        {
+          "client_id": "674378221259-nicdkpdkv36u65sqptgcd96fbjtvbhsl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1xfoF7wHyO-k6lbjiTgymuqU7KebvFwA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "674378221259-nicdkpdkv36u65sqptgcd96fbjtvbhsl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
