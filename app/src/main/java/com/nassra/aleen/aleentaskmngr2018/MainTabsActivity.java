@@ -19,6 +19,10 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.nassra.aleen.aleentaskmngr2018.taskFragments.MyTaskFragment;
+import com.nassra.aleen.aleentaskmngr2018.taskFragments.ProfileFragment;
+import com.nassra.aleen.aleentaskmngr2018.taskFragments.TaskHistoryFragment;
+
 public class MainTabsActivity extends AppCompatActivity {
 
     /**
@@ -129,7 +133,11 @@ public class MainTabsActivity extends AppCompatActivity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    public class SectionsPagerAdapter extends FragmentPagerAdapter
+    {
+        MyTaskFragment myTasksFragment;
+        TaskHistoryFragment taskHistoryFragment;
+        ProfileFragment profileFragment;
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -137,8 +145,21 @@ public class MainTabsActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
+           if(position==0){
+               if (myTasksFragment==null)
+                   myTasksFragment=new MyTaskFragment();
+               return myTasksFragment;
+           }
+            if(position==1){
+                if (taskHistoryFragment==null)
+                   taskHistoryFragment=new TaskHistoryFragment();
+                return taskHistoryFragment;
+            }
+            if(position==3){
+                if (profileFragment==null)
+                    profileFragment=new ProfileFragment();
+                return profileFragment;
+            }
             return PlaceholderFragment.newInstance(position + 1);
         }
 
@@ -146,6 +167,17 @@ public class MainTabsActivity extends AppCompatActivity {
         public int getCount() {
             // Show 3 total pages.
             return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            if(position==0)
+                return "Tasks";
+            if(position==1)
+                return "History";
+            if(position==3)
+                return "profile";
+            return "noname";
         }
     }
 }
