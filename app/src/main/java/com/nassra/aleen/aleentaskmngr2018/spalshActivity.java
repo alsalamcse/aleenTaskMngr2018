@@ -26,7 +26,7 @@ public class spalshActivity extends AppCompatActivity {
         public void run() {
             try {
                 sleep(3000);
-                Intent i=new Intent(spalshActivity.this,MainTabsActivity.class);
+                Intent i=new Intent(spalshActivity.this,logInActivity.class);
                 startActivity(i);
 
             }
