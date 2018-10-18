@@ -48,7 +48,7 @@ public class signUpActivity extends AppCompatActivity {
     }
 
     private void dataHandler() {
-        boolean itsok=true;
+        boolean isok=true;
         String email=etEmail2.getText().toString();
         String pass=etPassword2.getText().toString();
         String fName=etFirstName.getText().toString();
@@ -56,10 +56,15 @@ public class signUpActivity extends AppCompatActivity {
         String phone=etPhone.getText().toString();
         if (email.length()<4||email.indexOf('@')<0||email.indexOf('.')<0){
             etEmail2.setError("wrong email");
+            isok=false;
 
         }
         if ((pass.length())<8){
             etPassword2.setError("wrong password");
+            isok=false;
+        }
+        if (isok){
+            creatAcount(email,pass);
         }
 
 
