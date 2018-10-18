@@ -34,15 +34,37 @@ public class signUpActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(signUpActivity.this,logInActivity.class);
-                startActivity(intent);
+                ///Intent intent=new Intent(signUpActivity.this,logInActivity.class);
+                ///startActivity(intent);
+               dataHandler();
             }
         });
+
+
         auth=FirebaseAuth.getInstance();
         user=auth.getCurrentUser();
 
 
     }
+
+    private void dataHandler() {
+        boolean itsok=true;
+        String email=etEmail2.getText().toString();
+        String pass=etPassword2.getText().toString();
+        String fName=etFirstName.getText().toString();
+        String lName=etLastName.getText().toString();
+        String phone=etPhone.getText().toString();
+        if (email.length()<4||email.indexOf('@')<0||email.indexOf('.')<0){
+            etEmail2.setError("wrong email");
+
+        }
+        if ((pass.length())<8){
+            etPassword2.setError("wrong password");
+        }
+
+
+    }
+
     private void creatAcount(String email,String passw){
         auth.createUserWithEmailAndPassword(email,passw).addOnCompleteListener(signUpActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
