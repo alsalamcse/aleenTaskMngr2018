@@ -1,12 +1,18 @@
 package com.nassra.aleen.aleentaskmngr2018;
 
+import android.app.DatePickerDialog;
+import android.app.DatePickerDialog.OnDateSetListener;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class addTaskActivity extends AppCompatActivity {
     private EditText etTitle,etTask,etDate;
@@ -36,6 +42,11 @@ public class addTaskActivity extends AppCompatActivity {
         btnDatePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
+
+
 
             }
         });
