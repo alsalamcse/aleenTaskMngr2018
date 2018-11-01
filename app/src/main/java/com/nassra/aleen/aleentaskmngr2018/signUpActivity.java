@@ -77,8 +77,7 @@ public class signUpActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     Toast.makeText(signUpActivity.this, "AUTHENTICTION SUCCESSFUL", Toast.LENGTH_SHORT).show();
                     finish();
-                    //Intent intent=new Intent(signUpActivity.this,logInActivity.class);
-                    //startActivity(intent);
+
                 }
                 else {
                     Toast.makeText(signUpActivity.this, "Authentication failed"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
