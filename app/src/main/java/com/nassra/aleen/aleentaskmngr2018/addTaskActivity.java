@@ -37,20 +37,30 @@ public class addTaskActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dataHadler();
 
 
             }
         });
 
 
-
-
-
-
-
-
-
             }
+
+    private void dataHadler()
+    {
+        boolean isok=true;
+        String title=etTitle.getText().toString();
+        String task=etTask.getText().toString();
+        String importent=tvImportent.getText().toString();
+        String necessary=tvNecessary.getText().toString();
+        int sImportent=skbrImportent.getProgress();
+        int snecessary=skbrNecessary.getProgress();
+        //if (title.length()<0||)
+
+
+
+    }
+
     public void onClick(View v) {
 
         if (v == btnDatePicker) {
