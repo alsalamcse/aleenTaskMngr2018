@@ -69,6 +69,7 @@ public class logInActivity extends AppCompatActivity {
             isok=false;
         }
         if (isok){
+            signIn(email,pass);
 
         }
 
@@ -85,7 +86,8 @@ public class logInActivity extends AppCompatActivity {
                     finish();
                 }
                 else {
-                    Toast.makeText(logInActivity.this, "", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(logInActivity.this, ""+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    task.getException().printStackTrace();
 
                 }
 

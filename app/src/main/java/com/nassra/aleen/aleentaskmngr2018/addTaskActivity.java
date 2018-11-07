@@ -12,7 +12,10 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.nassra.aleen.aleentaskmngr2018.data.MyTask;
+
 import java.util.Calendar;
+import java.util.Date;
 
 public class addTaskActivity extends AppCompatActivity {
     private EditText etTitle,etTask,etDate;
@@ -46,19 +49,29 @@ public class addTaskActivity extends AppCompatActivity {
 
             }
 
-    private void dataHadler()
-    {
-        boolean isok=true;
-        String title=etTitle.getText().toString();
-        String task=etTask.getText().toString();
-        String importent=tvImportent.getText().toString();
-        String necessary=tvNecessary.getText().toString();
-        int sImportent=skbrImportent.getProgress();
-        int snecessary=skbrNecessary.getProgress();
-        //if (title.length()<0||)
+    private void dataHadler() {
+        boolean isok = true;
+        String title = etTitle.getText().toString();
+        String task = etTask.getText().toString();
+
+        String importent = tvImportent.getText().toString();
+        String necessary = tvNecessary.getText().toString();
+        int sImportent = skbrImportent.getProgress();
+        int snecessary = skbrNecessary.getProgress();
+        if (title.length() == 0) {
+            etTitle.setError("");
 
 
-
+        }
+        if (task.length()==0){
+            etTask.setError("");
+        }
+        if (isok)
+        {
+            MyTask task1=new MyTask();
+            task1.setCreatDate(new Date());
+            //task1.setDueDate();
+        }
     }
 
     public void onClick(View v) {

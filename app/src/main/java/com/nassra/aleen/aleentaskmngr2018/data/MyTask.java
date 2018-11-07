@@ -10,6 +10,8 @@ public class MyTask {
     private int importent;
     private Date creatDate;
     private Date dueDate;
+    private String owner;
+
 
     public MyTask() {
 
@@ -71,6 +73,16 @@ public class MyTask {
         this.dueDate = dueDate;
     }
 
+    public String getOwner() {
+        return owner;
+    }
+
+
+    public void setOwner(String ownwe) {
+        this.owner = ownwe;
+    }
+
+
     @Override
     public String toString() {
         return "MyTask{" +
@@ -81,6 +93,8 @@ public class MyTask {
                 ", importent=" + importent +
                 ", creatDate=" + creatDate +
                 ", dueDate=" + dueDate +
+                ",owner="+owner+
                 '}';
     }
+
 }
