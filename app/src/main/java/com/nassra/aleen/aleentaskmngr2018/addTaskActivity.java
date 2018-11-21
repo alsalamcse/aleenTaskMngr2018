@@ -30,6 +30,7 @@ public class addTaskActivity extends AppCompatActivity {
     private SeekBar skbrImportent,skbrNecessary;
     private Button btnDatePicker,btnSave;
     private int mYear, mMonth, mDay;
+    private Date myDate= new Date();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +74,7 @@ public class addTaskActivity extends AppCompatActivity {
 
         }
         if (task.length()==0){
-            etTask.setError("yo have to write a task");
+            etTask.setError("you have to write a task");
             isok=false;
         }
         if (isok)
@@ -123,7 +124,10 @@ public class addTaskActivity extends AppCompatActivity {
                         @Override
                         public void onDateSet(DatePicker view, int year,
                                               int monthOfYear, int dayOfMonth) {
-
+                           c.set(Calendar.YEAR, year);
+                           c.set(Calendar.MONTH,monthOfYear);
+                           c.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+                            myDate=c.getTime();
                             etDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
 
                         }
