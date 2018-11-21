@@ -127,7 +127,7 @@ public class addTaskActivity extends AppCompatActivity {
                             etDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
 
                         }
-                    }, mYear, mMonth, mDay);
+                        }, mYear, mMonth, mDay);
             datePickerDialog.show();
         }
     }
