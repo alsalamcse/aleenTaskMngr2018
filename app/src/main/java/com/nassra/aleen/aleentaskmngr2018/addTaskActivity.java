@@ -54,7 +54,6 @@ public class addTaskActivity extends AppCompatActivity {
             }
         });
 
-
             }
 
     private void dataHadler() {
@@ -86,12 +85,15 @@ public class addTaskActivity extends AppCompatActivity {
             task1.setTesk(task);
             task1.setImportent(sImportent);
             task1.setNexessary(snecessary);
+
             FirebaseAuth auth=FirebaseAuth.getInstance();
             task1.setOwner(auth.getCurrentUser().getEmail());
+
             DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
-            String key=reference.child("my taskd").push().getKey();
+
+            String key=reference.child("MyTask").push().getKey();
             task1.setKey(key);
-            reference.child("my tasks").child(key).setValue(task1).addOnCompleteListener(new OnCompleteListener<Void>() {
+            reference.child("MyTasks").child(key).setValue(task1).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task1) {
                     if (task1.isSuccessful()){
